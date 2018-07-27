@@ -5,7 +5,7 @@ The TurnCounterTemplate.ino contains a basic sketch that has one example model o
 
 Each Blink will have three states that roughly correspond with the phases of a player's turn: NOMINAL, FRACTURED, and RESOLVING. 
 
-In this model, a player is represented by a specific color. When it is a certain player's turn, all Blinks will glow that player's color (ex. Player 1 is represented by blue. When it is Player 1's turn, all Blinks will be relaying the color blue on their 0 face). This is the NOMINAL state. 
+In this model, a player is represented by a specific color. When it is a certain player's turn, all Blinks will glow that player's color (ex. Player 1 is represented by blue. When it is Player 1's turn, all Blinks will be relaying the color blue on their 0 face). This is the NOMINAL state. Currently, for testing purposes, the template assumes 4 players in the game. 
 
 A turn starts when one or more Blinks are separated from the other Blinks. The separated Blinks will enter the FRACTURED state due to having missing neighbors and glow white indicating their state. The Blinks they directly separated from also enter this state due to recognizing their neighbors got cut off, and enter the FRACTURED state as well. They will relay a message to all connecting Blinks to become FRACTURED as well (it is possible to visually witness the communication speed is one has enough Blinks). The FRACTURED state indictates the player is in the middle of their turn. 
 
@@ -13,7 +13,7 @@ When a FRACTURED Blink is reconnected to the other Blinks, they will enter a RES
 
 Once all Blinks are in the NOMINAL state, they should indicate the next player's color on their 0 face. 
 
-# PENDING ISSSUES #
+# Pending Issues #
 
 While this turn counter template works ideally in a world where all players move confidentally and surely, there are a myriad of issues that plague the consistency of this model. 
 
